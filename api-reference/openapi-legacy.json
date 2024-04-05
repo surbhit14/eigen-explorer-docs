@@ -19,13 +19,23 @@
         }
     ],
     "paths": {
-        "/avs": {
+        "/plants": {
             "get": {
-                "description": "Returns all AVS data",
-                "parameters": [],
+                "description": "Returns all plants from the system that the user has access to",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The maximum number of results to return",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "AVS response",
+                        "description": "Plant response",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -48,28 +58,33 @@
                         }
                     }
                 }
-            }
-        },
-        "/avs/count": {
-            "get": {
-                "description": "Returns the total number of AVS",
-                "parameters": [],
+            },
+            "post": {
+                "description": "Creates a new plant in the store",
+                "requestBody": {
+                    "description": "Plant to add to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewPlant"
+                            }
+                        }
+                    },
+                    "required": true
+                },
                 "responses": {
                     "200": {
-                        "description": "AVS response",
+                        "description": "plant response",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Plant"
-                                    }
+                                    "$ref": "#/components/schemas/Plant"
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Unexpected error",
+                        "description": "unexpected error",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -81,9 +96,9 @@
                 }
             }
         },
-        "/avs/{id}": {
-            "get": {
-                "description": "Returns a single AVS based on the ID supplied",
+        "/plants/{id}": {
+            "delete": {
+                "description": "Deletes a single plant based on the ID supplied",
                 "parameters": [
                     {
                         "name": "id",
@@ -113,69 +128,60 @@
                     }
                 }
             }
-        },
-        "/operator": {
-            "get": {
-                "description": "Returns all operator data",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "AVS response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Plant"
-                                    }
-                                }
-                            }
-                        }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Plant": {
+                "required": ["name"],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the plant",
+                        "type": "string"
                     },
-                    "400": {
-                        "description": "Unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
+                    "tag": {
+                        "description": "Tag to specify the type",
+                        "type": "string"
+                    }
+                }
+            },
+            "NewPlant": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Plant"
+                    },
+                    {
+                        "required": ["id"],
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "description": "Identification number of the plant",
+                                "type": "integer",
+                                "format": "int64"
                             }
                         }
+                    }
+                ]
+            },
+            "Error": {
+                "required": ["error", "message"],
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
                     }
                 }
             }
         },
-        "/operator/{id}": {
-            "get": {
-                "description": "Returns a single operator based on the ID supplied",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID of plant to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Plant deleted",
-                        "content": {}
-                    },
-                    "400": {
-                        "description": "unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
             }
         }
     }

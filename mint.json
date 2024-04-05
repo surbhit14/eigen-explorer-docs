@@ -25,7 +25,12 @@
         "name": "Homepage",
         "url": "https://eigenexplorer.com"
     },
-    "tabs": [],
+    "tabs": [
+        {
+            "name": "API Reference",
+            "url": "api-reference"
+        }
+    ],
     "anchors": [
         {
             "name": "Documentation",
@@ -43,7 +48,11 @@
             "group": "Introduction",
             "pages": ["introduction", "changelog"]
         },
-        { "group": "Data", "pages": ["data/avs"] }
+        { "group": "Data", "pages": ["data/avs"] },
+        {
+            "group": "API Documentation",
+            "pages": ["api-reference/introduction"]
+        }
     ],
     "footerSocials": {
         "twitter": "https://twitter.com/eigenexplorer",
