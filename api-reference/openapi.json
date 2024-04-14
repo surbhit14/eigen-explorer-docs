@@ -1,176 +1,119 @@
 {
-    "openapi": "3.0.1",
+    "openapi": "3.0.0",
     "info": {
-        "title": "Eigen Explorer",
-        "description": "Eigen Explorer API service",
+        "title": "Eigen Explorer node / server backend",
+        "version": "1.0.0",
+        "description": "Eigen Explorer node / server backend API documentation",
         "license": {
-            "name": "MIT"
-        },
-        "version": "1.0.0"
+            "name": "MIT",
+            "url": "https://spdx.org/licenses/MIT.html"
+        }
     },
     "servers": [
         {
-            "url": "http://api.eigenexplorer.com"
-        }
-    ],
-    "security": [
-        {
-            "bearerAuth": []
+            "url": "https://api.eigenexplorer.com",
+            "description": "Eigen Explorer API server"
         }
     ],
     "paths": {
         "/avs": {
             "get": {
-                "description": "Returns all AVS data",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "AVS response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Plant"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/avs/count": {
-            "get": {
-                "description": "Returns the total number of AVS",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "AVS response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Plant"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/avs/{id}": {
-            "get": {
-                "description": "Returns a single AVS based on the ID supplied",
+                "summary": "Retrieve a list of AVS records",
+                "description": "Returns a paginated list of AVS (Automated Validation Systems) records along with summary data for each, such as the number of active operators and total stakers. This endpoint supports pagination.",
+                "tags": ["AVS"],
                 "parameters": [
                     {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID of plant to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
+                        "in": "query",
+                        "name": "skip",
+                        "required": false,
+                        "schema": { "type": "integer", "default": 0 },
+                        "description": "Number of records to skip for pagination."
+                    },
+                    {
+                        "in": "query",
+                        "name": "take",
+                        "required": false,
+                        "schema": { "type": "integer", "default": 10 },
+                        "description": "Limit number of records to return (used for pagination)."
                     }
                 ],
                 "responses": {
-                    "204": {
-                        "description": "Plant deleted",
-                        "content": {}
-                    },
-                    "400": {
-                        "description": "unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/operator": {
-            "get": {
-                "description": "Returns all operator data",
-                "parameters": [],
-                "responses": {
                     "200": {
-                        "description": "AVS response",
+                        "description": "A successful response with AVS data.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Plant"
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "avs": {
+                                                        "$ref": "#/components/schemas/AVS"
+                                                    },
+                                                    "totalOperators": {
+                                                        "type": "integer",
+                                                        "description": "Total number of active operators within the AVS."
+                                                    },
+                                                    "totalStakers": {
+                                                        "type": "integer",
+                                                        "description": "Total number of stakers across all operators in this AVS."
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "meta": {
+                                            "type": "object",
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer",
+                                                    "description": "Total number of AVS records in the database."
+                                                },
+                                                "skip": {
+                                                    "type": "integer",
+                                                    "description": "Number of records skipped in the current request."
+                                                },
+                                                "take": {
+                                                    "type": "integer",
+                                                    "description": "Number of records requested to return."
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Unexpected error",
+                        "description": "General error during the data fetching process.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Error"
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "description": "Error message detailing the issue encountered."
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                }
-            }
-        },
-        "/operator/{id}": {
-            "get": {
-                "description": "Returns a single operator based on the ID supplied",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID of plant to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Plant deleted",
-                        "content": {}
                     },
-                    "400": {
-                        "description": "unexpected error",
+                    "422": {
+                        "description": "Validation error on request parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Error"
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "description": "Error message detailing what went wrong during request validation."
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -181,57 +124,99 @@
     },
     "components": {
         "schemas": {
-            "Plant": {
-                "required": ["name"],
+            "EntityMetadata": {
                 "type": "object",
                 "properties": {
                     "name": {
-                        "description": "The name of the plant",
-                        "type": "string"
+                        "type": "string",
+                        "description": "Name of the entity."
                     },
-                    "tag": {
-                        "description": "Tag to specify the type",
-                        "type": "string"
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the entity."
+                    },
+                    "discord": {
+                        "type": "string",
+                        "description": "Optional Discord contact.",
+                        "nullable": true
+                    },
+                    "logo": {
+                        "type": "string",
+                        "description": "Optional logo URL.",
+                        "nullable": true
+                    },
+                    "telegram": {
+                        "type": "string",
+                        "description": "Optional Telegram contact.",
+                        "nullable": true
+                    },
+                    "website": {
+                        "type": "string",
+                        "description": "Optional website URL.",
+                        "nullable": true
+                    },
+                    "x": {
+                        "type": "string",
+                        "description": "Additional optional field.",
+                        "nullable": true
                     }
                 }
             },
-            "NewPlant": {
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/Plant"
-                    },
-                    {
-                        "required": ["id"],
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "description": "Identification number of the plant",
-                                "type": "integer",
-                                "format": "int64"
-                            }
-                        }
-                    }
-                ]
-            },
-            "Error": {
-                "required": ["error", "message"],
+            "AvsOperator": {
                 "type": "object",
                 "properties": {
-                    "error": {
-                        "type": "integer",
-                        "format": "int32"
+                    "address": {
+                        "type": "string",
+                        "description": "Address of the AVS operator."
                     },
-                    "message": {
-                        "type": "string"
+                    "isActive": {
+                        "type": "boolean",
+                        "description": "Indicates whether the operator is active."
+                    }
+                }
+            },
+            "AVS": {
+                "type": "object",
+                "required": ["id", "address", "metadata"],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The unique identifier for the AVS."
+                    },
+                    "address": {
+                        "type": "string",
+                        "description": "The unique address of the AVS."
+                    },
+                    "metadata": {
+                        "$ref": "#/components/schemas/EntityMetadata",
+                        "description": "Metadata associated with the AVS."
+                    },
+                    "curatedMetadata": {
+                        "$ref": "#/components/schemas/EntityMetadata",
+                        "description": "Curated metadata, optionally provided for the AVS.",
+                        "nullable": true
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": { "type": "string" },
+                        "description": "Tags associated with the AVS."
+                    },
+                    "isVisible": {
+                        "type": "boolean",
+                        "description": "Visibility status of the AVS."
+                    },
+                    "isVerified": {
+                        "type": "boolean",
+                        "description": "Verification status of the AVS."
+                    },
+                    "operators": {
+                        "type": "array",
+                        "items": { "$ref": "#/components/schemas/AvsOperator" },
+                        "description": "List of operators associated with this AVS."
                     }
                 }
             }
-        },
-        "securitySchemes": {
-            "bearerAuth": {
-                "type": "http",
-                "scheme": "bearer"
-            }
         }
-    }
+    },
+    "tags": []
 }
