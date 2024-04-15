@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "mintlify": "^4.0.132"
-  }
+    "scripts": {
+        "generate-docs": "npx @mintlify/scraping@latest openapi-file ./api-reference/openapi.json  -o ./api-reference/endpoint"
+    },
+    "dependencies": {
+        "mintlify": "^4.0.132"
+    }
 }
