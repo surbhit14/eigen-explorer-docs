@@ -16,6 +16,7 @@
         }
     },
     "api": {
+        "maintainOrder": true,
         "auth": {
             "method": "bearer"
         }
@@ -59,30 +60,26 @@
             "pages": ["api-reference/introduction", "api-reference/errors"]
         },
         {
-            "group": "AVS",
-            "pages": [
-                "api-reference/endpoint/avs/retrieve-all-avs",
-                "api-reference/endpoint/avs/retrieve-a-single-avs"
-            ]
-        },
-        {
             "group": "Metrics",
             "pages": [
                 "api-reference/endpoint/metrics/retrieve-explorer-metrics",
+                "api-reference/endpoint/metrics/retrieve-the-combined-tvl-from-all-strategies",
+                "api-reference/endpoint/metrics/retrieve-the-beacon-chain-restaking-tvl",
+                "api-reference/endpoint/metrics/retrieve-the-combined-tvl-in-lst-strategies",
+                "api-reference/endpoint/metrics/retrieve-the-tvl-in-a-specific-lst-strategy",
                 "api-reference/endpoint/metrics/retrieve-the-total-number-of-avs",
                 "api-reference/endpoint/metrics/retrieve-the-total-number-of-operators",
                 "api-reference/endpoint/metrics/retrieve-the-total-number-of-stakers"
             ]
         },
         {
-            "group": "TVL",
+            "group": "AVS",
             "pages": [
-                "api-reference/endpoint/tvl/retrieve-the-total-value-locked-tvl-from-all-strategies",
-                "api-reference/endpoint/tvl/retrieve-the-total-value-locked-tvl-in-the-beacon-chain-eigen-pods",
-                "api-reference/endpoint/tvl/retrieve-the-total-value-locked-tvl-in-lst-strategies",
-                "api-reference/endpoint/tvl/retrieve-the-total-value-locked-tvl-in-a-specific-lst-strategy"
+                "api-reference/endpoint/avs/retrieve-all-avs",
+                "api-reference/endpoint/avs/retrieve-a-single-avs"
             ]
         },
+
         {
             "group": "Operators",
             "pages": [
