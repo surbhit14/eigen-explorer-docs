@@ -52,9 +52,17 @@
     "navigation": [
         {
             "group": "Introduction",
-            "pages": ["introduction", "changelog"]
+            "pages": ["introduction", "changelog", "roadmap"]
         },
-        { "group": "Data", "pages": ["data/avs"] },
+        {
+            "group": "Data",
+            "pages": [
+                "data/avs",
+                "data/operators",
+                "data/stakers",
+                "data/strategies"
+            ]
+        },
         {
             "group": "API Documentation",
             "pages": ["api-reference/introduction", "api-reference/errors"]
