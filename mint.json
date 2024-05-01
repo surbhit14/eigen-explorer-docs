@@ -70,36 +70,31 @@
         {
             "group": "Metrics",
             "pages": [
-                "api-reference/endpoint/metrics/retrieve-explorer-metrics",
-                "api-reference/endpoint/metrics/retrieve-the-combined-tvl-from-all-strategies",
-                "api-reference/endpoint/metrics/retrieve-the-beacon-chain-restaking-tvl",
-                "api-reference/endpoint/metrics/retrieve-the-combined-tvl-in-lst-strategies",
-                "api-reference/endpoint/metrics/retrieve-the-tvl-in-a-specific-lst-strategy",
-                "api-reference/endpoint/metrics/retrieve-the-total-number-of-avs",
-                "api-reference/endpoint/metrics/retrieve-the-total-number-of-operators",
-                "api-reference/endpoint/metrics/retrieve-the-total-number-of-stakers"
+                "api-reference/endpoint/metrics/retrieve-summary-metrics",
+                "api-reference/endpoint/metrics/retrieve-total-tvl",
+                "api-reference/endpoint/metrics/retrieve-beacon-chain-restaking-tvl",
+                "api-reference/endpoint/metrics/retrieve-restaking-strategies-tvl",
+                "api-reference/endpoint/metrics/retrieve-a-strategy-tvl-by-name",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-avs",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-avs-operators",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers"
             ]
         },
         {
             "group": "AVS",
             "pages": [
                 "api-reference/endpoint/avs/retrieve-all-avs",
-                "api-reference/endpoint/avs/retrieve-a-single-avs"
+                "api-reference/endpoint/avs/retrieve-all-avs-addresses",
+                "api-reference/endpoint/avs/retrieve-an-avs-by-address",
+                "api-reference/endpoint/avs/retrieve-all-stakers-for-a-given-avs-address",
+                "api-reference/endpoint/avs/retrieve-all-operators-for-a-given-avs-address"
             ]
         },
-
         {
             "group": "Operators",
             "pages": [
                 "api-reference/endpoint/operators/retrieve-all-operators",
-                "api-reference/endpoint/operators/retrieve-an-operator-by-id"
-            ]
-        },
-        {
-            "group": "Strategies",
-            "pages": [
-                "api-reference/endpoint/strategies/retrieve-total-tvl-from-all-strategies",
-                "api-reference/endpoint/strategies/retrieve-tvl-for-a-specific-strategy"
+                "api-reference/endpoint/operators/retrieve-an-operator-by-address"
             ]
         }
     ],
