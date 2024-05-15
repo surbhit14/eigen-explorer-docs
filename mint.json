@@ -65,7 +65,11 @@
         },
         {
             "group": "API Documentation",
-            "pages": ["api-reference/introduction", "api-reference/errors"]
+            "pages": [
+                "api-reference/introduction",
+                "api-reference/errors",
+                "api-reference/methodology"
+            ]
         },
         {
             "group": "Metrics",
