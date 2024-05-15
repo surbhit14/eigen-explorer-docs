@@ -39,11 +39,6 @@
     ],
     "anchors": [
         {
-            "name": "Documentation",
-            "icon": "book-open-cover",
-            "url": "introduction"
-        },
-        {
             "name": "Community",
             "icon": "telegram",
             "url": "https://t.me/eigenexplorer"
@@ -68,7 +63,8 @@
             "pages": [
                 "api-reference/introduction",
                 "api-reference/errors",
-                "api-reference/methodology"
+                "api-reference/methodology",
+                "api-reference/changelog"
             ]
         },
         {
