@@ -1,0 +1,57 @@
+---
+title: 'Data Methodology'
+description: 'Sources and methods for data collection and processing'
+---
+
+This document outlines the data sources and methodology used to collect and process the data provided by the EigenExplorer API.
+
+EigenLayer on-chain data is primarily derived from event logs, which are processed block by block. For AVS, Operators, and Stakers data, we sync with the Ethereum blockchain every 2 minutes to ensure the most up-to-date information is available to our users. Liquid Staking Token (LST) strategy data is retrieved from the Ethereum blockchain in real-time upon request, and total TVL for LSTs is fetched in real-time from Strategy contracts. Staker and operator LST shares, along with their TVL, are seeded and queried from the database. To calculate Beacon Chain Total Value Locked (TVL), we sync our data with the Beacon Chain every 10 minutes.
+
+## Entity Data
+
+### AVS
+
+AVS data is aggregated from the EigenLayer AVS Directory smart contract. Specifically, we collect the `AVSMetadataURIUpdated` event logs from the AVS Directory smart contract. These event logs contain the metadata URI of the AVS, which includes the AVS name, description, and other relevant information.
+
+### Operators
+
+Operator data is aggregated from the EigenLayer Delegation Manager smart contract. Specifically, we collect the `OperatorMetadataURIUpdated` and `OperatorAVSRegistrationStatusUpdated` event logs from the Delegation Manager contract. These logs contain the metadata URI of the Operator, which includes the Operator's name, description, and other relevant information.
+
+### Stakers
+
+Staker data is aggregated from the EigenLayer Delegation Manager smart contract. We collect various events related to staking from the Delegation Manager smart contract, including:
+
+-   `StakerDelegated`
+-   `StakerUndelegated`
+-   `OperatorSharesIncreased`
+-   `OperatorSharesDecreased`
+
+This data includes information about the stakers, their delegated operators, and the shares associated with different strategies.
+
+## Metrics Data
+
+### LST Strategy TVL
+
+LST strategy data is retrieved directly from its token balance with the EigenLayer Strategy smart contract. For LST strategy TVL, we provide both raw and normalized TVL data.
+
+-   Raw TVL data: The total value locked in the strategy in LST tokens.
+-   Normalized TVL data: The total value locked in ETH, with the exchange rate retrieved at the listed timestamp from CoinMarketCap.
+
+### Beacon Chain TVL
+
+<Note>
+    {' '}
+    Aligning with the methodology used on the EigenLayer Dashboard, we use raw balances
+    and do not count queued withdrawals.
+</Note>
+Beacon Chain TVL is calculated by aggregating all EigenPods registered in the EigenPodManager
+smart contract. We then query all Beacon Chain validators that have set a registered
+EigenPod as their withdrawal address. The total value locked in the Beacon Chain
+is determined by multiplying the number of validators by the minimum staking requirement
+of 32 ETH.
+
+## Miscellaneous
+
+### TVL Conversion
+
+We provide both raw data (in native tokens) and normalized data (in ETH) for TVL. Normalized data is calculated by fetching the exchange rate from CoinMarketCap at the timestamp of the data point.
