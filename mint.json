@@ -1,6 +1,6 @@
 {
     "$schema": "https://mintlify.com/schema.json",
-    "name": "Eigen Explorer Docs",
+    "name": "EigenExplorer Docs",
     "logo": {
         "dark": "/public/logo/logo-dark.svg",
         "light": "/public/logo/logo-light.svg"
