@@ -16,10 +16,7 @@
         }
     },
     "api": {
-        "maintainOrder": true,
-        "auth": {
-            "method": "bearer"
-        }
+        "maintainOrder": true
     },
     "topbarLinks": [
         {
