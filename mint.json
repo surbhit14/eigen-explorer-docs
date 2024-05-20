@@ -94,6 +94,22 @@
                 "api-reference/endpoint/operators/retrieve-all-operators",
                 "api-reference/endpoint/operators/retrieve-an-operator-by-address"
             ]
+        },
+        {
+            "group": "Stakers",
+            "pages": [
+                "api-reference/endpoint/stakers/retrieve-all-withdrawals-by-staker-address",
+                "api-reference/endpoint/stakers/retrieve-queued-withdrawals-by-staker-address",
+                "api-reference/endpoint/stakers/retrieve-queued-and-withdrawable-withdrawals-by-staker-address",
+                "api-reference/endpoint/stakers/retrieve-completed-withdrawals-by-staker-address"
+            ]
+        },
+        {
+            "group": "Withdrawals",
+            "pages": [
+                "api-reference/endpoint/withdrawals/retrieve-all-withdrawals",
+                "api-reference/endpoint/withdrawals/retrieve-withdrawal-by-withdrawal-root"
+            ]
         }
     ],
     "footerSocials": {
