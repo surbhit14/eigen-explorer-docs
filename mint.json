@@ -61,7 +61,8 @@
                 "api-reference/introduction",
                 "api-reference/errors",
                 "api-reference/methodology",
-                "api-reference/changelog"
+                "api-reference/changelog",
+                "api-reference/api-status"
             ]
         },
         {
