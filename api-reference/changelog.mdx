@@ -4,6 +4,27 @@ description: 'Latest updates and announcements'
 icon: bolt
 ---
 
+## May 20, 2024 - EigenLayer Withdrawal Data
+
+---
+
+<Frame type='glass'>
+    <img
+        src='/public/images/changelog/withdrawals-update.png'
+        alt='Changelog Image for May 14th'
+    />
+</Frame>
+
+We are thrilled to announce the addition of two new types of API routes for querying EigenLayer withdrawal data. Efficient withdrawal management is essential for overseeing and accounting for staking activities in the EigenLayer ecosystem. Now you can directly access `withdrawals` and `stakers/:address/withdrawals` routes to retrieve detailed withdrawal information.
+
+1. Individual Routes - `/withdrawals`
+   We’ve introduced brand new routes to query all withdrawal history or retrieve individual withdrawal data. Now, you can filter withdrawals by staker address, delegated operator, strategy address, and withdrawal status. This added flexibility allows you to pinpoint specific operators and combine various query parameters to suit your needs.
+
+1. Nested Routes - `/stakers/{address}/withdrawals`
+   To make your REST queries even smoother, we’ve rolled out nested routes that simplify the process of retrieving withdrawals for specific stakers. Use `/stakers/:address/withdrawals` to list all withdrawals for a staker. Plus, you can access queued, queued and withdrawable, and completed withdrawals through dedicated routes for more precise queries.
+
+With these new withdrawal data routes, you can now access detailed information on staker withdrawals, greatly enhancing your ability to manage and analyze staking activities. As always, if you have any feedback or suggestions, feel free to reach out to us. We look forward to seeing how you leverage these new routes in your applications!
+
 ## May 14, 2024 - Data Quality, Standardization, and Consistency Improvements
 
 Thanks to our users and community, we have crossed 100k requests and reached 3.4k unique users in the past month. In our latest update, we've focused on enhancing data quality, standardization, and consistency across the EigenExplorer platform. Key improvements include:
