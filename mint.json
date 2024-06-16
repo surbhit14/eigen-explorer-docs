@@ -66,6 +66,13 @@
             ]
         },
         {
+            "group": "System",
+            "pages": [
+                "api-reference/endpoint/system/retrieve-api-server-version",
+                "api-reference/endpoint/system/retrieve-api-server-status"
+            ]
+        },
+        {
             "group": "Metrics",
             "pages": [
                 "api-reference/endpoint/metrics/retrieve-summary-metrics",
@@ -98,6 +105,8 @@
         {
             "group": "Stakers",
             "pages": [
+                "api-reference/endpoint/stakers/retrieve-all-stakers",
+                "api-reference/endpoint/stakers/retrieve-a-staker-by-address",
                 "api-reference/endpoint/stakers/retrieve-all-withdrawals-by-staker-address",
                 "api-reference/endpoint/stakers/retrieve-queued-withdrawals-by-staker-address",
                 "api-reference/endpoint/stakers/retrieve-queued-and-withdrawable-withdrawals-by-staker-address",
