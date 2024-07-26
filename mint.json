@@ -5,7 +5,7 @@
         "dark": "/public/logo/logo-dark.svg",
         "light": "/public/logo/logo-light.svg"
     },
-    "favicon": "/public/favicon.svg",
+    "favicon": "/public/logo.svg",
     "colors": {
         "primary": "#27272a",
         "light": "#ffffff",
@@ -44,7 +44,7 @@
     "navigation": [
         {
             "group": "Introduction",
-            "pages": ["introduction", "changelog", "roadmap"]
+            "pages": ["introduction", "support", "changelog", "roadmap"]
         },
         {
             "group": "Data",
