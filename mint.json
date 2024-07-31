@@ -34,17 +34,17 @@
             "url": "api-reference"
         }
     ],
-    "anchors": [
-        {
-            "name": "Community",
-            "icon": "telegram",
-            "url": "https://t.me/eigenexplorer"
-        }
-    ],
+    "anchors": [],
     "navigation": [
         {
             "group": "Introduction",
-            "pages": ["introduction", "support", "changelog", "roadmap"]
+            "pages": [
+                "introduction",
+                "support",
+                "community",
+                "changelog",
+                "roadmap"
+            ]
         },
         {
             "group": "Data",
