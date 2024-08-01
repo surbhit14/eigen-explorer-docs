@@ -134,7 +134,9 @@
     ],
     "footerSocials": {
         "twitter": "https://twitter.com/eigenexplorer",
-        "telegram": "https://t.me/eigenexplorer"
+        "telegram": "https://t.me/eigenexplorer",
+        "discord": "https://discord.gg/R5AabFfy",
+        "github": "https://github.com/eigenexplorer"
     },
     "feedback": {
         "thumbsRating": true
