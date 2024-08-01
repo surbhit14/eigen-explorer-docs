@@ -34,25 +34,36 @@
             "url": "api-reference"
         }
     ],
-    "anchors": [
-        {
-            "name": "Community",
-            "icon": "telegram",
-            "url": "https://t.me/eigenexplorer"
-        }
-    ],
+    "anchors": [],
     "navigation": [
         {
             "group": "Introduction",
-            "pages": ["introduction", "support", "changelog", "roadmap"]
+            "pages": ["introduction", "support", "community", "changelog"]
         },
         {
-            "group": "Data",
+            "group": "Liquid AVS Token",
             "pages": [
-                "data/avs",
-                "data/operators",
-                "data/stakers",
-                "data/strategies"
+                "lat/introduction",
+                "lat/quick-start",
+                "lat/why-lat",
+                "lat/cost"
+            ]
+        },
+        {
+            "group": "Knowledge Base",
+            "pages": [
+                "knowledge-base/eigen-layer",
+                "knowledge-base/staking-restaking"
+            ]
+        },
+        {
+            "group": "Glossaries",
+            "pages": [
+                "glossaries/avs",
+                "glossaries/operators",
+                "glossaries/stakers",
+                "glossaries/lst",
+                "glossaries/avs-token"
             ]
         },
         {
@@ -123,7 +134,9 @@
     ],
     "footerSocials": {
         "twitter": "https://twitter.com/eigenexplorer",
-        "telegram": "https://t.me/eigenexplorer"
+        "telegram": "https://t.me/eigenexplorer",
+        "discord": "https://discord.gg/R5AabFfy",
+        "github": "https://github.com/eigenexplorer"
     },
     "feedback": {
         "thumbsRating": true
