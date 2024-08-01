@@ -38,21 +38,32 @@
     "navigation": [
         {
             "group": "Introduction",
+            "pages": ["introduction", "support", "community", "changelog"]
+        },
+        {
+            "group": "Liquid AVS Token",
             "pages": [
-                "introduction",
-                "support",
-                "community",
-                "changelog",
-                "roadmap"
+                "lat/introduction",
+                "lat/quick-start",
+                "lat/why-lat",
+                "lat/cost"
             ]
         },
         {
-            "group": "Data",
+            "group": "Knowledge Base",
             "pages": [
-                "data/avs",
-                "data/operators",
-                "data/stakers",
-                "data/strategies"
+                "knowledge-base/eigen-layer",
+                "knowledge-base/staking-restaking"
+            ]
+        },
+        {
+            "group": "Glossaries",
+            "pages": [
+                "glossaries/avs",
+                "glossaries/operators",
+                "glossaries/stakers",
+                "glossaries/lst",
+                "glossaries/avs-token"
             ]
         },
         {
