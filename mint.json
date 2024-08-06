@@ -93,7 +93,9 @@
                 "api-reference/endpoint/metrics/retrieve-a-strategy-tvl-by-name",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs-operators",
-                "api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers"
+                "api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-deposits",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-withdrawls"
             ]
         },
         {
