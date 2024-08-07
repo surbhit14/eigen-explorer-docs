@@ -123,7 +123,8 @@
                 "api-reference/endpoint/stakers/retrieve-all-withdrawals-by-staker-address",
                 "api-reference/endpoint/stakers/retrieve-queued-withdrawals-by-staker-address",
                 "api-reference/endpoint/stakers/retrieve-queued-and-withdrawable-withdrawals-by-staker-address",
-                "api-reference/endpoint/stakers/retrieve-completed-withdrawals-by-staker-address"
+                "api-reference/endpoint/stakers/retrieve-completed-withdrawals-by-staker-address",
+                "api-reference/endpoint/stakers/retrieve-all-deposits-by-staker-address"
             ]
         },
         {
