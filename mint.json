@@ -94,8 +94,13 @@
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs-operators",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers",
+                "api-reference/endpoint/metrics/retrieve-total-number-of-withdrawals",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-deposits",
-                "api-reference/endpoint/metrics/retrieve-total-number-of-withdrawls"
+                "api-reference/endpoint/metrics/retrieve-historic-avs-count",
+                "api-reference/endpoint/metrics/retrieve-historic-operators-count",
+                "api-reference/endpoint/metrics/retrieve-historic-stakers-count",
+                "api-reference/endpoint/metrics/retrieve-historic-withdrawals-count",
+                "api-reference/endpoint/metrics/retrieve-historic-deposits-count"
             ]
         },
         {
