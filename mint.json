@@ -145,6 +145,12 @@
                 "api-reference/endpoint/withdrawals/retrieve-all-withdrawals",
                 "api-reference/endpoint/withdrawals/retrieve-withdrawal-by-withdrawal-root"
             ]
+        },
+        {
+            "group": "Deposits",
+            "pages": [
+                "api-reference/endpoint/deposits/retrieve-all-deposits"
+            ]
         }
     ],
     "footerSocials": {
