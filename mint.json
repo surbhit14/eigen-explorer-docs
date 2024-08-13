@@ -96,18 +96,18 @@
                 "api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-withdrawals",
                 "api-reference/endpoint/metrics/retrieve-total-number-of-deposits",
-                "api-reference/endpoint/metrics/retrieve-historical-avs-aggregate",
-                "api-reference/endpoint/metrics/retrieve-historical-operators-aggregate",
                 "api-reference/endpoint/metrics/retrieve-historical-tvl",
                 "api-reference/endpoint/metrics/retrieve-historical-tvl-beacon-chain",
                 "api-reference/endpoint/metrics/retrieve-historical-tvl-restaking-by-strategy-address",
-                "api-reference/endpoint/metrics/retrieve-historical-withdrawal-aggregate",
-                "api-reference/endpoint/metrics/retrieve-historical-deposit-aggregate",
                 "api-reference/endpoint/metrics/retrieve-historical-avs-count",
                 "api-reference/endpoint/metrics/retrieve-historical-operators-count",
                 "api-reference/endpoint/metrics/retrieve-historical-stakers-count",
                 "api-reference/endpoint/metrics/retrieve-historical-withdrawals-count",
-                "api-reference/endpoint/metrics/retrieve-historical-deposits-count"
+                "api-reference/endpoint/metrics/retrieve-historical-deposits-count",
+                "api-reference/endpoint/metrics/retrieve-historical-avs-aggregate",
+                "api-reference/endpoint/metrics/retrieve-historical-operators-aggregate",
+                "api-reference/endpoint/metrics/retrieve-historical-withdrawal-aggregate",
+                "api-reference/endpoint/metrics/retrieve-historical-deposit-aggregate"
             ]
         },
         {
