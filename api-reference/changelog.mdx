@@ -4,6 +4,142 @@ description: 'Latest updates and announcements'
 icon: bolt
 ---
 
+---
+
+## August 15, 2024 - Version 0.2.0 Release
+
+---
+
+We are excited to announce the release of **version 0.2.0** of the **Eigen Explorer API**, packed with powerful new features, enhanced capabilities, and optimized performance. This update includes several new API routes, expanded metrics, and more refined query options, providing developers with a richer and more flexible experience when working with the EigenLayer ecosystem.
+
+### **Comprehensive Overview of New Features and Enhancements**
+
+This version introduces significant improvements across the board, adding both new functionalities and enhancing existing routes to offer more precise, detailed, and useful data to developers. Here's a breakdown of the key updates:
+
+### **Enhanced Metrics Capabilities**
+
+#### **Retrieve Strategy TVL by Name**
+We have added an enhancement to the [Retrieve a strategy TVL by name](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-a-strategy-tvl-by-name) endpoint. Now, the response includes a new field, `tvlEth`, representing the Total Value Locked (TVL) of the restaking strategy, denominated in ETH. This provides a clearer and more meaningful insight into the value locked in each strategy within the ecosystem, enabling developers to track and analyze strategies with greater accuracy.
+
+#### **Entity Growth Tracking**
+Tracking the growth of various entities within the EigenLayer ecosystem is now more insightful with the following enhancements:
+- **AVS Count Growth**: The [Retrieve total number of AVS](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-total-number-of-avs) endpoint now includes metrics showing the **24-hour** and **7-day** changes in AVS count, allowing developers to understand the dynamics of new AVS entries.
+- **Operator and Staker Growth**: Similarly, the [Retrieve total number of AVS operators](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-total-number-of-avs-operators) and [Retrieve total number of AVS stakers](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-total-number-of-avs-stakers) endpoints now return data reflecting the growth trends over the last day and week, providing a broader perspective on operator and staker participation.
+  <Frame type='glass'>
+        <img
+            src='/public/images/changelog/24h-and-7d-changes.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+These metrics make it easier to track the development and engagement within the EigenLayer ecosystem, helping developers understand how quickly the network is expanding.
+
+#### **Withdrawal and Deposit Totals**
+We've introduced two new endpoints that provide aggregate data on the total number of withdrawals and deposits:
+- **Total Withdrawals**: The [Retrieve total number of withdrawals](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-total-number-of-withdrawals) (`/metrics/total-withdrawals`) endpoint offers a comprehensive overview of withdrawal activities within the network.
+- **Total Deposits**: The [Retrieve total number of deposits](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-total-number-of-deposits) (`/metrics/total-deposits`) endpoint provides insight into the deposit volume across the ecosystem.
+
+These endpoints are crucial for monitoring and analyzing the flow of assets within EigenLayer, giving developers the tools to oversee and manage the network’s economic activities effectively.
+
+### **Introduction of Historical Data Tracking**
+
+#### **Historical TVL Data**
+Understanding the historical trends of TVL within the EigenLayer ecosystem is now possible with the following newly introduced routes:
+- **Overall TVL History**: The [Retrieve historical total TVL data](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-tvl) (`/metrics/historical/tvl`) route allows developers to query TVL data over time, providing valuable insights into the network's growth.
+- **Beacon Chain TVL History**: For those focusing on the Beacon Chain, the [Retrieve historical Beacon Chain restaking TVL](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-tvl-beacon-chain) (`/metrics/historical/tvl/beacon-chain`) route provides targeted historical data specific to it.
+- **Strategy-Specific TVL History**: Developers can now track TVL for individual strategies using the [Retrieve historical TVL data by strategy address](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-tvl-restaking-by-strategy-address) (`/metrics/historical/tvl/restaking/{address}`) route.
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/historical-tvl-response.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+These routes enable detailed analysis over time, helping developers and analysts to study the impact of different strategies and network changes on TVL.
+
+#### **Historical Entity Counts**
+To complement the historical TVL data, we’ve also added routes to track the historical counts of various entities:
+- **AVS Count History**: Track the growth in AVS entities with the [Retrieve historical count of AVS](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-avs-count) (`/metrics/historical/count-avs`) route.
+- **Operator Count History**: The [Retrieve historical count of AVS operators](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-operators-count) (`/metrics/historical/count-operators`) route allows for tracking the number of operators over time.
+- **Staker Count History**: Analyze staker participation trends with the [Retrieve historical count of AVS stakers](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-stakers-count) (`/metrics/historical/count-stakers`).
+- **Withdrawal and Deposit Histories**: Track asset movement over time using the [Retrieve historical count of withdrawals](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-withdrawals-count) (`/metrics/historical/count-withdrawals`) and [Retrieve historical count of deposits](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-deposits-count) (`/metrics/historical/count-deposits`) routes.
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/historical-count-response.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+These endpoints are essential for understanding the long-term growth and activity within the EigenLayer ecosystem, providing a detailed historical perspective.
+
+### **Expanded Historical Aggregated Data**
+
+We’ve also introduced routes for retrieving historical aggregated data, including both `tvlEth` and other relevant metrics:
+- **AVS Aggregate History**: The [Retrieve historical AVS aggregate data](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-avs-aggregate) (`/metrics/historical/avs/{address}`) endpoint provides a historical overview of AVS-related metrics.
+- **Operator Aggregate History**: Use the [Retrieve historical operator aggregate data](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-operators-aggregate) (`/metrics/historical/operators/{address}`) to track operator metrics over time.
+- **Withdrawal and Deposit Aggregate History**: Retrieve aggregate historical data on withdrawals with the [Retrieve historical withdrawal aggregate data](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-withdrawal-aggregate) (`/metrics/historical/withdrawals`) and on deposits with the [Retrieve historical deposit aggregate data](https://docs.eigenexplorer.com/api-reference/endpoint/metrics/retrieve-historical-deposit-aggregate) (`/metrics/historical/deposits`).
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/historical-aggregate-response.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+These endpoints support filtering by frequency (1 hour, 1 day, 7 days), tally variant (discrete or cumulative), and date range (start and end date). This added granularity enables developers to perform more detailed and specific analyses.
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/historical-filter-query.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+
+
+### **Improved AVS and Operator Query Options**
+
+#### **Curated Metadata for AVS**
+Curated metadata is a mechanism that allows for the manual overriding or enhancement of the standard metadata associated with AVS entities. This feature is particularly useful when there is a need to refine or supplement the data for better accuracy. 
+The curated metadata can include various attributes such as Tags, which help categorize and label AVS entities more effectively.
+
+The [Retrieve all AVS](https://docs.eigenexplorer.com/api-reference/endpoint/avs/retrieve-all-avs) and [Retrieve an AVS by address](https://docs.eigenexplorer.com/api-reference/endpoint/avs/retrieve-an-avs-by-address) endpoints now include an optional `withCuratedMetadata` flag. This flag allows developers to retrieve curated metadata for AVS, offering richer and more detailed information about each AVS entity.
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/with-curated-metadata.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+
+
+#### **Operator Strategy Details**
+The [Retrieve all operators for a given AVS address](https://docs.eigenexplorer.com/api-reference/endpoint/avs/retrieve-all-operators-for-a-given-avs-address) endpoint now returns the AVS operator's restaked strategies, providing a more comprehensive view of the operator's activities within the ecosystem.
+
+### **New Deposit Routes for EigenLayer Deposit Data**
+    <Frame type='glass'>
+        <img
+            src='/public/images/changelog/deposits-endpoint.png'
+            alt='Changelog Image for August 15th'
+        />
+    </Frame>
+We’ve added two new routes that offer greater flexibility and precision in managing deposit data within EigenLayer:
+
+#### **Individual Deposit Routes - `/deposits`**
+The [Retrieve all deposits](https://docs.eigenexplorer.com/api-reference/endpoint/deposits/retrieve-all-deposits) (`/deposits`) route is a robust tool for querying the entire deposit history or retrieving specific deposit records. You can filter deposits by:
+- **Staker Address**: Track deposits associated with specific stakers.
+- **Token Address**: Filter deposits by the token used, providing insights into token-specific activity.
+- **Strategy Address**: Focus on deposits tied to particular strategies within the ecosystem.
+
+These filters allow you to customize your queries to retrieve exactly the data you need, making it easier to monitor and analyze deposit activities.
+
+#### **Nested Deposit Routes - `/stakers/{address}/deposits`**
+To simplify the retrieval of deposit data for individual stakers, we’ve introduced the [Retrieve all deposits by staker address](https://docs.eigenexplorer.com/api-reference/endpoint/stakers/retrieve-all-deposits-by-staker-address) (`/stakers/{address}/deposits`) endpoint. This route provides a streamlined way to access and organize deposit information specific to a single staker, making it easier to track and analyze their deposit behavior.
+
+These new deposit routes offer a deeper level of insight into deposit patterns within EigenLayer, empowering developers to manage and analyze staking activities more effectively.
+
+---
+
+### Documentation Improvements
+
+To support developers in integrating and leveraging our API effectively, we’ve enriched our documentation with detailed examples and comprehensive response schemas, ensuring a seamless experience as you explore and implement the new features and capabilities.
+
+We look forward to seeing how you leverage these new features in your projects and encourage your feedback and suggestions for further enhancements.
+
+---
+
 ## June 16, 2024 - Major Updates on Infrastructure
 
 ---
