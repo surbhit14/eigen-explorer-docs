@@ -2436,6 +2436,20 @@
           },
           {
             "in": "query",
+            "name": "sortByTvl",
+            "description": "Sort results in asc or desc order of TVL value",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "description": "Sort results in asc or desc order of TVL value",
+              "example": "desc"
+            }
+          },
+          {
+            "in": "query",
             "name": "sortByTotalStakers",
             "description": "Sort results in asc or desc order of total stakers",
             "schema": {
@@ -3704,6 +3718,20 @@
           },
           {
             "in": "query",
+            "name": "sortOperatorsByTvl",
+            "description": "Sort Operators of a given AVS in asc or desc order of TVL (only valid for individual AVS queries)",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "description": "Sort Operators of a given AVS in asc or desc order of TVL (only valid for individual AVS queries)",
+              "example": "desc"
+            }
+          },
+          {
+            "in": "query",
             "name": "skip",
             "description": "The number of records to skip for pagination",
             "schema": {
@@ -4033,6 +4061,20 @@
               "default": "false",
               "description": "Toggle whether the route should calculate the TVL from shares",
               "example": "false"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortByTvl",
+            "description": "Sort results in asc or desc order of TVL value",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "description": "Sort results in asc or desc order of TVL value",
+              "example": "desc"
             }
           },
           {
