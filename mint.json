@@ -47,7 +47,8 @@
                 "lat/quick-start",
                 "lat/why-lat",
                 "lat/cost",
-                "lat/comparison"
+                "lat/comparison",
+                "lat/faq"
             ]
         },
         {
@@ -155,9 +156,7 @@
         },
         {
             "group": "Deposits",
-            "pages": [
-                "api-reference/endpoint/deposits/retrieve-all-deposits"
-            ]
+            "pages": ["api-reference/endpoint/deposits/retrieve-all-deposits"]
         }
     ],
     "footerSocials": {
