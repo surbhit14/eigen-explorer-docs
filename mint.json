@@ -41,9 +41,10 @@
             "pages": ["introduction", "support", "community", "changelog"]
         },
         {
-            "group": "Liquid AVS Token",
+            "group": "Direct Liquid Restaking",
             "pages": [
                 "lat/introduction",
+                "lat/lat",
                 "lat/quick-start",
                 "lat/why-lat",
                 "lat/cost",
@@ -54,8 +55,8 @@
         {
             "group": "Knowledge Base",
             "pages": [
-                "knowledge-base/eigen-layer",
-                "knowledge-base/staking-restaking"
+                "knowledge-base/staking-restaking",
+                "knowledge-base/eigen-layer"
             ]
         },
         {
